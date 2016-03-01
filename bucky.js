@@ -51,7 +51,7 @@
             return console.error.apply(console, msgs);
         }
     };
-    
+
     exportDef = function() {
         var $tag, ACTIVE, HISTORY, TYPE_MAP, client, considerSending, defaults, enqueue, flush, key, latencySent, makeClient, makeRequest, maxTimeout, options, queue, round, sendQueue, sendTimeout, setOptions, tagOptions, updateActive, updateLatency, _i, _len, _ref, _ref1, _ref2;
         defaults = {
@@ -155,11 +155,7 @@
                 match = /^(https?:\/\/[^\/]+)/i.exec(options.host);
                 if (match) {
                     origin = match[1];
-                    if (origin === ("" + document.location.protocol + "//" + document.location.host)) {
-                        sameOrigin = true;
-                    } else {
-                        sameOrigin = false;
-                    }
+                    sameOrigin = origin === ("" + document.location.protocol + "//" + document.location.host);
                 } else {
                     sameOrigin = true;
                 }
